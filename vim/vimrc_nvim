@@ -1,0 +1,64 @@
+set nocompatible
+
+" file type
+filetype on
+filetype indent on
+filetype plugin on
+set encoding=utf-8
+
+" **** UI ****
+syntax on
+set background=dark
+set number relativenumber
+set ruler
+set colorcolumn=90
+set showcmd
+set showmode
+set cursorline  
+set visualbell
+
+" **** Editor ****
+set backspace=indent,eol,start
+let mapleader=","
+set expandtab
+set hlsearch
+set incsearch
+set laststatus=2
+set ttyfast
+set hidden
+set history=100
+
+set autoread
+
+" Centralize backups, swapfiles and undo history
+"set backupdir=~/.vim/backups
+"set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
+
+" *** MAPPINGS ***
+" open vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+
+" PLUGINS "
+" --------
+"
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdTree'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+""" THEMES  "
+Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+
+" Initialize plugin system
+call plug#end()
+
+colorscheme gruvbox
