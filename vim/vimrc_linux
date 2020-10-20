@@ -4,18 +4,18 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdTree'
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+"Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 "Plug 'scrooloose/nerdcommenter'
-
+Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'jceb/vim-orgmode'
 
 """ THEMES  "
 Plug 'tomasr/molokai'
