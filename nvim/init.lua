@@ -22,31 +22,39 @@ require('packer').startup(function()
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-  use  'williamboman/nvim-lsp-installer'	
   
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'joshdick/onedark.vim' -- Theme inspired by Atom
   use 'itchyny/lightline.vim' -- Fancier statusline
-  
+ 
+  -- #######  EDITOR ########
+
   -- Add indentation guides even on blank lines
   use 'lukas-reineke/indent-blankline.nvim'
-  
+ 
+  -- add pair brackets 
+  use 'jiangmiao/auto-pairs'
+
   -- Add git related info in the signs columns and popups
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  
+
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   use 'nvim-treesitter/nvim-treesitter'
   
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+
+  --  ##### LSP ########
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use  'williamboman/nvim-lsp-installer'	--auto install LSPs
   
-  -- Themes
+
+  -- ###### Themes ########
   use 'tomasr/molokai'
   use 'morhetz/gruvbox'
 end)
