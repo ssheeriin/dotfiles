@@ -53,6 +53,8 @@ return packer.startup(function(use)
 
   -- color schemes
   use "sainnhe/everforest"
+  use "arcticicestudio/nord-vim"
+  use "EdenEast/nightfox.nvim"
 
    -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -65,7 +67,7 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- Automatically set up your configuration after cloning packer.nvim
+-- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
