@@ -120,3 +120,7 @@ eval "$(starship init zsh)"
 alias ll="exa -lh"
 alias la="exa -lah"
 alias ls="exa"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
