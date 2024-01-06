@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,7 +110,15 @@ alias ls="exa"
 # paths 
 export PATH=$PATH:~/bin
 
+# zsh-completions
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
