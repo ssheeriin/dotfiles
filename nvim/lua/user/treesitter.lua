@@ -1,6 +1,12 @@
+-- require("nvim-treesitter.install").prefer_git = true  --use git instead of curl (default) 
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-  ensure_installed = "all",
+  --  ignore_install = { "gdshader", "norg", "scala" },
+  --  ensure_installed = "all",
+  -- had issue with some parsers so installing only i need
+  ensure_installed = {
+    "lua", "python", "json", "yaml", "bash", "markdown", "html", "css", "javascript"
+  },
   sync_install = false, 
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {

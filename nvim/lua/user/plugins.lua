@@ -45,16 +45,39 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
+  -- for work only --- 
+  use "github/copilot.vim"
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+     run = ":TSUpdate", -- this will fail with command not found, retart nvim to resume
   }
 
   -- color schemes
   use "sainnhe/everforest"
   use "arcticicestudio/nord-vim"
   use "EdenEast/nightfox.nvim"
+  use {
+    "NLKNguyen/papercolor-theme",
+    config = function()
+    vim.cmd("colorscheme PaperColor")
+    end
+  }
+
+  -- navigation
+  use {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.5',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-telescope/telescope-ui-select.nvim' },
+    },
+    config = function()
+      require("user.telescope")
+    end
+  }
 
    -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -66,6 +89,12 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- stunning status lines
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
