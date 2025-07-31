@@ -14,5 +14,12 @@ vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.cmdheight = 1                           -- space in the neovim command line for displaying messages
 vim.o.laststatus = 2 							              -- status bar width
+vim.o.guifont = "JetBrainsMono Nerd Font Mono:h14"  -- set the font for GUI applications
+vim.opt.scrolloff = 8                           -- minimal number of screen lines to keep above and below the cursorline
+vim.opt.linespace = 1                           -- space between lines
 
-
+-- neovide specific
+if vim.g.neovide then
+  vim.g.neovide_cursor_vfx_mode = "railgun"     -- cursor effects in neovide_cursor_vfx_mode
+  vim.g.neovide_opacity = 0.95                  -- neovide_transparency
+end

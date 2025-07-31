@@ -1,0 +1,10 @@
+theme = "auto"
+tabs= "true"
+
+
+[font]
+normal = ["JetBrainsMono Nerd Font Mono Medium"] 
+bold = ["JetBrainsMono Nerd Font Mono ExtraBold"]
+italic = ["JetBrainsMono Nerd Font Mono Medium Italic"]
+boldItalic = ["JetBrainsMono Nerd Font Mono ExtraBold Italic"]
+
