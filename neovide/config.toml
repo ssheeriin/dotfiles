@@ -1,3 +1,8 @@
+# Sherin's Neovide Configuration
+# Author: Sherin Stephen
+# Repository: https://github.com/ssheeriin/dotfiles
+# License: MIT
+
 theme = "auto"
 tabs= "true"
 
@@ -7,4 +12,3 @@ normal = ["JetBrainsMono Nerd Font Mono Medium"]
 bold = ["JetBrainsMono Nerd Font Mono ExtraBold"]
 italic = ["JetBrainsMono Nerd Font Mono Medium Italic"]
 boldItalic = ["JetBrainsMono Nerd Font Mono ExtraBold Italic"]
-
