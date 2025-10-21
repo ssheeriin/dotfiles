@@ -1,12 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Homebrew completions
-  if type brew &>/dev/null; then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-    autoload -Uz compinit
-    compinit
-   fi
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
@@ -50,7 +44,9 @@ zinit light-mode for \
 
 #plugins
 zinit light Aloxaf/fzf-tab
-
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 ########## Oh My Posh prompt ##########
 OMP_THEME="/opt/homebrew/opt/oh-my-posh/themes/jandedobbeleer.omp.json"
@@ -60,9 +56,6 @@ if command -v oh-my-posh >/dev/null 2>&1; then
 fi
 # end oh my Posh
 
-# Home brew installed plugins 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
@@ -72,3 +65,9 @@ export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
