@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#added for casepace
+autoload -Uz compinit
+compinit
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
@@ -10,9 +13,9 @@ SAVEHIST=$HISTSIZE
 alias vi="nvim"
 alias cat="bat"
 alias ps="procs"
-alias ll="lsd -l"
-alias la="lsd -a"
-alias ls="lsd"
+alias ll="eza -l"
+alias la="eza -a"
+alias ls="eza"
 
 # paths 
 export PATH=$PATH:~/bin
@@ -56,6 +59,10 @@ if command -v oh-my-posh >/dev/null 2>&1; then
 fi
 # end oh my Posh
 
+#carapace initialize
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
@@ -71,3 +78,24 @@ if [ -f '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Use
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sherin/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/sherin/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/sherin/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/sherin/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/sherin/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

@@ -1,7 +1,7 @@
 # Neovim generated files
 nvim/lazy-lock.json
 nvim/plugin/packer_compiled.lua
-
+.idea/
 # macOS system files
 .DS_Store
 .DS_Store?
