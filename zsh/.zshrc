@@ -16,7 +16,10 @@ alias ps="procs"
 alias ll="eza -l"
 alias la="eza -a"
 alias ls="eza"
-
+alias grep="rg"
+alias l="eza -l"
+alias top="htop"
+alias find="fd"
 # paths 
 export PATH=$PATH:~/bin
 
