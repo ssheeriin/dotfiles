@@ -19,7 +19,9 @@ alias ls="eza"
 alias grep="rg"
 alias l="eza -l"
 alias top="htop"
-alias find="fd"
+
+# fd for find will comflict with sdkman, so commenting it out
+#alias find="fd"
 # paths 
 export PATH=$PATH:~/bin
 
@@ -67,20 +69,16 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
 # iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/I073367/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/sherin/.lmstudio/bin"
@@ -101,4 +99,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
 
